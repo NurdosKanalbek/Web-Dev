@@ -1,0 +1,10 @@
+.product-list {
+  margin-top: 20px;
+}
+.product-list h2 {
+  margin-bottom: 10px;
+}
+.product-list ul {
+  list-style: none;
+  padding: 0;
+}

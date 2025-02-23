@@ -1,0 +1,58 @@
+<div class="product-card" *ngFor="let product of products; let i = index">
+  <!-- Галерея изображений -->
+
+  <div class="image-gallery">
+    <button class="gallery-button left" (click)="prevImage(i)">&#10094;</button>
+    <img
+      [src]="product.imageUrls[currentImageIndex[i]]"
+      [alt]="product.name"
+      class="product-image"
+    />
+    <button class="gallery-button right" (click)="nextImage(i)">
+      &#10095;
+    </button>
+  </div>
+
+  <div class="product-content">
+    <div class="product-name">{{ product.name }}</div>
+    <div class="product-description">{{ product.description }}</div>
+    <div class="product-rating">⭐ {{ product.rating }}</div>
+
+    <a [href]="product.link" class="product-link" target="_blank">Купить</a>
+
+    <div class="share-buttons">
+      <a
+        class="share-button whatsapp"
+        (click)="share(product, 'whatsapp')"
+        title="Поделиться в WhatsApp"
+      >
+        <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="icon" />
+      </a>
+      <a
+        class="share-button telegram"
+        (click)="share(product, 'telegram')"
+        title="Поделиться в Telegram"
+      >
+        <img src="assets/icons/telegram.svg" alt="Telegram" class="icon" />
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <h1>Categories</h1>
+    <ul class="category-list">
+      <li
+        *ngFor="let category of categories"
+        (click)="selectCategory(category)"
+      >
+        {{ category.name }}
+      </li>
+    </ul>
+
+    <app-product-list
+      *ngIf="selectedCategory"
+      [products]="selectedCategory.products"
+      (remove)="removeProduct($event)"
+    >
+    </app-product-list>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Categories</h1>
+  <ul class="category-list">
+    <li *ngFor="let category of categories" (click)="selectCategory(category)">
+      {{ category.name }}
+    </li>
+  </ul>
+  <app-product-list
+    *ngIf="selectedCategory"
+    [products]="selectedCategory.products"
+    (remove)="removeProduct($event)"
+  >
+  </app-product-list>
+</div>
