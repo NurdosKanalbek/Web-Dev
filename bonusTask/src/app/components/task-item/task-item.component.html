@@ -1,0 +1,22 @@
+<div class="task-item">
+  <h3>{{ task.title }}</h3>
+  <p>{{ task.description }}</p>
+  <p><strong>Category:</strong> {{ task.category }}</p>
+  <p><strong>Status:</strong> {{ task.status }}</p>
+  <p><strong>Deadline:</strong> {{ task.deadline }}</p>
+
+  <button
+    *ngIf="task.status === 'Pending'"
+    (click)="markComplete.emit(task.id)"
+  >
+    Mark as Completed
+  </button>
+  <button
+    *ngIf="task.status === 'Completed'"
+    (click)="markIncomplete.emit(task.id)"
+  >
+    Mark as Incomplete
+  </button>
+
+  <a [routerLink]="['/task', task.id]">View Details</a>
+</div>

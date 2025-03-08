@@ -1,0 +1,8 @@
+<div *ngFor="let task of tasks">
+  <app-task-item
+    [task]="task"
+    (markComplete)="onCompleteTask($event)"
+    (markIncomplete)="onIncompleteTask($event)"
+  >
+  </app-task-item>
+</div>

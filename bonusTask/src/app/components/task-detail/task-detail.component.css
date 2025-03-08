@@ -1,0 +1,15 @@
+.task-detail {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-detail h2 {
+  margin-bottom: 10px;
+}
+
+.task-detail p {
+  margin: 5px 0;
+  color: #555;
+}

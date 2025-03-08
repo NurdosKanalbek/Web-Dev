@@ -1,0 +1,9 @@
+<div *ngIf="task">
+  <h2>{{ task.title }}</h2>
+  <p>{{ task.description }}</p>
+  <p><strong>Category:</strong> {{ task.category }}</p>
+  <p><strong>Status:</strong> {{ task.status }}</p>
+  <p><strong>Deadline:</strong> {{ task.deadline }}</p>
+
+  <button (click)="goBack()">Back to Tasks</button>
+</div>
